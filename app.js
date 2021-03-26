@@ -155,7 +155,7 @@ function validateInputs(sourceString, sourceSystem, destinationSystem, transferT
     let stringCheck = true;
     const soureArr = sourceString.split("");
 
-    if (!sourceString || !sourceSystem || !destinationSystem || !transferType) return { error: { message: "Některá z hodnot nutných pro výpočet není vyplněná" } };
+    if (!sourceString || !sourceSystem || !destinationSystem || !transferType) return { error: { message: "Některá z hodnot nutných pro převod není vyplněná" } };
 
     if (soureArr.find(str => str == "," || str == ".")) return { error: { message: "Bohužel neumím počítat desetiné čísla. :-(" } };
     soureArr.forEach(str => {
@@ -163,10 +163,7 @@ function validateInputs(sourceString, sourceSystem, destinationSystem, transferT
         if (!baseArr.slice(0, sourceSystem).find(e => e == str)) stringCheck = { error: { message: "Některý ze znaků do sady nepatří." } };
     });
 
-
-
     if (stringCheck.error) return stringCheck;
-
     if (sourceSystem == destinationSystem) return { error: { message: "Zdrojová soustava a cílová jsou stejné" } };
 
     return 0;
