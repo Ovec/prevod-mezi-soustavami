@@ -70,7 +70,6 @@ const getDirectConversionType = (sourceBase, destinationBase) => {
  * @returns { String } converted string
  */
 const directConversion = (sourceSystem, destinationSystem, str, conversionType, baseArr) => {
-    console.warn({ sourceSystem, destinationSystem, str, conversionType, baseArr });
     let res = [];
     let strings = str.toString().split('');
 
